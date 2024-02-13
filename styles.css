@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: url(./assets/images/background-pattern-desktop.svg) no-repeat center top/contain;
+    
+}
+.container{
+    max-width: 50%;
+    margin: 50px auto;
+    background: hsl(0, 0%, 100%);
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px  rgb(79, 77, 77);
+}
+header{
+    display: flex;
+}
+.question{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.question img:last-child{
+    display: none;
+}
