@@ -25,6 +25,12 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-.question img:last-child{
+.question .icon-plus{
+    display: none;
+}
+.answer.open{
+    display: block;
+}
+.answer{
     display: none;
 }
