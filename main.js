@@ -1,21 +1,49 @@
-document.addEventListener("DOMContentLoaded",function(){
-    const faqContainer=document.querySelector('.faq-content');
-    faqContainer.addEventListener('click',(e)=>{
-        const question=e.target.closest('.question');
-        if(!question)return;
+// document.addEventListener("DOMContentLoaded",function(){
+//     const faqContainer=document.querySelector('.faq-content');
+//     faqContainer.addEventListener('click',(e)=>{
+//         const question=e.target.closest('.question');
+//         if(!question)return;
 
-        const content=question.parentElement;
-        const answer=content.querySelector('.answer');
-        // const minus=question.querySelector('.icon-minus')
-        // const plus=question.querySelector('.icon-plus')
-        const icon=question.querySelector('img')
+//         const content=question.parentElement;
+//         const answer=content.querySelector('.answer');
         
-        answer.classList.toggle('open');
-        // minus.style.display="none";
-        // plus.style.display="block";
-        icon.classList.toggle('.icon-minus');
-        icon.classList.toggle('.icon-plus');
+//         const icon=question.querySelector('.icon')
         
-        // icon.src="./assets/images/icon-plus.svg";
+//         answer.classList.toggle('open');
+//         const isOpen=answer.classList.contains('open');
+        
+//         if(!isOpen){
+//             answer.classList.toggle('open');
+//             icon.src="./assets/images/icon-plus.svg";
+//         }else{
+//             icon.src="./assets/images/icon-minus.svg";
+//         }
+        
+//     });
+// });
+document.addEventListener('DOMContentLoaded', function(){
+    const items=document.querySelectorAll('.content');
+
+    items.forEach(item=>{
+        const question=item.querySelector('.question');
+        const icon=question.querySelector('.icon');
+
+        question.addEventListener('click',()=>{
+            const isOpen=item.classList.contains('active');
+
+            items.forEach(item=>{
+                item.classList.remove('active');
+                item.querySelector('.answer').classList.remove('open');
+                item.querySelector('.icon').src="./assets/images/icon-plus.svg";
+            });
+            if(!isOpen){
+                item.classList.add('active');
+                item.querySelector('.answer').classList.toggle('open');
+                icon.src="./assets/images/icon-minus.svg"
+            }
+
+        });
+
     });
+
 });

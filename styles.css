@@ -1,36 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Work Sans", sans-serif;
 }
 body{
-    background: url(./assets/images/background-pattern-desktop.svg) no-repeat center top/contain;
-    
+    background: url(./assets/images/background-pattern-desktop.svg) no-repeat center top/contain;  
 }
 .container{
-    max-width: 50%;
-    margin: 50px auto;
+    max-width: 490px;
+    margin: 100px auto;
     background: hsl(0, 0%, 100%);
-    padding: 20px;
-    border-radius: 25px;
-    box-shadow: 0 0 10px  rgb(79, 77, 77);
+    padding: 30px 30px 10px 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px  rgb(103, 100, 100);
 }
 header{
     display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+header img{
+    width: 27px;
+}
+header h1{
+    font-size: 2.3rem;
+    font-weight: 700;
+    margin-left: 15px;
+}
+.content{
+    border-bottom: 2px solid rgb(238, 233, 233);
+    margin-bottom: 15px;
+}
+.content:last-of-type{
+    border: none;
+    
 }
 .question{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
-.question .icon-plus{
-    display: none;
+.question h4{
+    font-size: 0.9rem;
+}
+.question h4:hover{
+    color: hsl(293, 66%, 44%);
+}
+.question img{
+    width:25px;
+    
+}
+.question img:hover{
+    background:rgb(234, 232, 232);
+    border-radius:40%; 
 }
 .answer.open{
     display: block;
+    
 }
 .answer{
     display: none;
+    margin-bottom: 15px;
+}
+.answer p{
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: hsl(292, 16%, 49%);
+}
+.attribution{
+    text-align:center;
+}
+@media (max-width:900px){
+    body{
+        background: url(./assets/images/background-pattern-desktop.svg) no-repeat center top;  
+    }
+}
+@media (max-width:600px){
+    
+    .container{
+        max-width: 90%;
+        margin: 130px auto;
+    }
 }
